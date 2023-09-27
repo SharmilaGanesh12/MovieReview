@@ -1,8 +1,7 @@
 class MoviesController < ApplicationController
-
   def index
-    @movies=Movie.all
-  end
-  def show
-  end
+    @pagy,@movies = pagy(Movie.search_by_name(params[:search])
+                              .filter_by_release_date(params[:from_date], params[:to_date])
+                              .order_by_highest_rating)
+    end
 end
