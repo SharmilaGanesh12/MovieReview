@@ -23,7 +23,11 @@
       <% end %>
       <% if alert %>
         <p class="alert alert-danger"><%= alert %></p>
-      <% end %><br>
+      <% end %>
+      <% if flash[:warning]  %>
+        <p class="alert alert-warning"><%= flash[:warning]  %></p>
+      <% end %>
+      <br>
       <%= yield %>
     </div>
   </body>
