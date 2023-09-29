@@ -1,7 +1,7 @@
 databases:
   - name: movie
-    databaseName: movie_9844
-    user: movie_9844_user
+    databaseName: movie_qzcf
+    user: movie_qzcf_user
 
 services:
   - type: web
