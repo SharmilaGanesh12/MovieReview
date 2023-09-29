@@ -1,17 +1,9 @@
-
+<% @review.errors.each do |error| %>
+  <p class="alert alert-danger"><%= error.full_message %></p>
+<% end %>
   <h3>New Review of <%= @movie.name %></h3><br>
   <div class="container">
   <%= form_with(model: [@movie,@review]) do |form| %>
-    <% if @review.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@review.errors.count, "error") %> prohibited this topic from being saved:</h2>
-        <ul>
-          <% @review.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
     <div class="field">
       <%= form.label :rating ,class:'h5'%>
       <%=form.radio_button :rating,1 %> 1⭐
